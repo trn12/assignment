@@ -1,0 +1,233 @@
+# ASSIGNMENT 1
+
+
+#Q 1. Explain the key feature of python that make it a popular choice of programming.
+
+  # Ans : list of features that make python a popular choice of programming languages:
+
+        #1. widely used in the industry
+        #2. widely used in the data industry
+        #3. There are lot of libraries in python like Pandas Numpy etc.
+        #4. It is a high level language
+        #5. It is a dynamic language
+        #6. it is a open source language.
+        #7. python is easy to learn.
+
+     
+
+#
+
+ #Q 2. Describe the role of predefined keywords in Python and provide examples of how they are used in a program.
+
+   #Ans: keywords are predefined keywords in python that have special meaning and functionality. They are used to define the syntax and structure of the program.
+
+        #Examples of how they are used in a program:
+
+       # 1. if statement: if statement is used to execute a block of code if a condition is true.
+       # 2. for loop: for loop is used to iterate over a sequence of values.
+       # 3. while loop: while loop is used to execute a block of code repeatedly as long as a condition is true.
+       # 4. def statement: def statement is used to define a function.
+       # 5. return statement: return statement is used to return a value from a function.
+
+#Q 3.Compare and contrast mutable and immutable objects in Python with examples.
+
+
+     #Ans : mutable and immutable objects are two types of objects in Python that can be used to store data. Mutable objects can be modified after they are created, while immutable objects cannot be modified after they are created
+
+          #for example list is mutable and string is immutable .
+
+             #code for mutable object is
+
+             #list1 = [1, 2, 3]
+             #list1[2] = 4
+             #print(list1)
+
+             #output : [1, 2, 4]
+
+             #code for immutable object is
+
+             #str1 = "hello"
+             #str1[2] = "a"
+             #print(str1)
+
+             #output : TypeError: 'str' object does not support item assignment
+
+
+             #str1 = "hello"
+             #str1[2] = "a"
+             #print(str1)
+
+             #output : TypeError: 'str' object does not support item assignment
+
+
+
+     
+
+#
+
+  # Q.4 Discuss the different types of operators in Python and provide examples of how they are used.
+
+  # Ans : operators are special keywords or symbols that are used to perform operations on values and variable . There are various types of operators in python
+  #       1. Arithmetic operator
+  #       ex : +, - , * ,/ , % etc
+
+  #       2. comparison operator
+  #       ex: <,> ,== etc
+  #
+  #       3. logical operator
+  #       ex: and , or , not
+  #
+  #       4. assignment operator
+  #       ex: = , += , -= , *= etc
+
+  #       5. membership operator
+  #       ex: in , not in
+  #
+  #       6. identity operator
+  #       ex: is , is not
+
+  #       7. bitwise operator
+  #       ex: & , | , ^ , ~ , << , >>
+
+  #       Examples of how they are used in python :
+  #       1. Arithmetic operator
+  #          They are used to perform arithmetical operations
+  #          ex:
+  #          a = 10
+  #          b = 20
+  #          c = a + b
+  #          print(c)
+  #          output : 30
+  #         2. comparison operator
+  #          They are used to compare two values
+  #         ex:
+  #          a = 10
+  #         b = 20
+  #       if a > b:
+  #       print("a is greater than b")
+  #       else:
+    #       print("b is greater than a")
+    #       output : b is greater than a
+    #       3.logical operator
+    #      They are used to combine two or more conditions
+    #      ex:
+    #      a = 10
+    #       b = 20
+    #       c = 30
+    #       if a > b and a > c:
+    #      4. assignment operator
+    #       They are used to assign values to variables
+    #       ex:
+    #       a = 10
+    #       c = a + b
+    #       print(c)
+    #       output : 30
+   #        5. membership operator
+    #       They are used to check if a value is present in a sequence
+    #       ex:
+    #       a = [1, 2, 3, 4, 5]
+    #       if 3 in a:
+    #       print("3 is present in the list")
+     #      else:
+     #      print("3 is not present in the list")
+    #       output : 3 is present in the list
+    #       6. identity operator
+     #      They are used to check if two variables refer to the same object
+     #      ex:
+     #      a = [1, 2, 3]
+     #      b = a
+     #      if a is b:
+      #     print("a and b refer to the same object")
+      #     else:
+      #     print("a and b do not refer to the same object")
+      #     output : a and b refer to the same object
+      #     7. bitwise operator
+      #     They are used to perform bitwise operations on integers
+      #     ex:
+      #     a = 10
+      #     b = 20
+      #     c = a & b
+       #    print(c)
+       #    output : 0
+
+
+
+
+     
+
+#
+  #Q 5. explain the concept of type casting in Python with examples.
+
+  # Ans : Type casting is the process of converting a value from one data type to another
+
+  #       examples of type casting are as follows
+
+   #       str_num = "123"
+  #        int_num = int(str_num)
+   #       print(int_num)
+  #        output :123
+
+   #       float_num = 3.14
+    #      int_num = int(float_num)
+    #      print(int_num)
+   #       output :
+     
+
+#
+
+# Q.6 How do conditional statements work in Python? Illustrate with examples
+
+#  Ans : conditional statements execute certain blocks of code based on weather a condition is true or false. if , elif, else are primary conditional statements.
+
+#        examples of conditional statements are as follows
+
+ #1. if statement :
+  #  if statement is used to execute a block of code if a condition is true.
+  #  ex: x= 10
+  #      if x > 5:
+   #     print("x is greater than 5")
+
+
+  # 2.elif statement
+  #  elif statement is used to check multiple conditions.
+  #  ex: x = 10
+  #      if x > 5:
+  #      print("x is greater than 5")
+  #      elif x == 5:
+  #      print("x is equal to 5")
+
+  #  3. else statement
+  #  else statement is used to execute a block of code if none of the previous conditions are true.
+  #  ex: x = 10
+  #      if x > 5:
+  #      print("x is greater than 5")
+  #      else:
+
+
+
+     
+
+#
+
+# Q 7 . Describe the different types of loops in Python and their use cases with examples.
+
+# Ans : loops are used to execute a block of code repeatedly.
+
+# The main loops are for loop and while loop .
+
+#for loop is used to iterate over a sequence of values.
+
+ # for i in range (5):
+ # print(i)
+
+
+ # while loop is used to execute a block of code repeatedly as long as a condition is true.
+
+
+ # i = 0
+ # while i < 5:
+  #  print(i)
+ #   i += 1
+
+
+     
