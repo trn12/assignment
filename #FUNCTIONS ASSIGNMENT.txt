@@ -1,0 +1,596 @@
+             #FUNCTIONS ASSIGNMENT
+
+
+#1. What is the difference between a function and a method in Python?
+
+# In Python, a function and a method are both blocks of code that perform a specific task, 
+# but they differ in how they are called and used.
+
+# Function:
+# A function is a block of code that is defined independently and can be called from anywhere in your program. 
+# It takes inputs as arguments and may return a value. 
+
+# Example of a function:
+def add_numbers(a, b):
+  """This function adds two numbers together."""
+  return a + b
+
+result = add_numbers(5, 3)
+print(result)  # Output: 8
+
+
+# Method:
+# A method is similar to a function, but it is associated with an object or a class. 
+# It is called using the dot notation (object.method()). 
+# Methods can access and modify the object's internal data.
+
+
+# Example of a method:
+class Dog:
+  def __init__(self, name):
+    self.name = name
+
+  def bark(self):
+    print("Woof!")
+
+my_dog = Dog("Buddy")
+my_dog.bark()  # Output: Woof!
+
+# Key Differences:
+
+# 1. Association with Objects: Methods are associated with objects, while functions are independent.
+# 2. Calling Syntax: Methods are called using dot notation (object.method()), while functions are called directly.
+# 3. Access to Data: Methods have access to the data and attributes of the object they belong to. 
+# 4. Usage: Methods are often used to perform actions related to the object, while functions are used for more general tasks.
+
+#2. Explain the concept of function arguments and parameters in Python
+
+# In Python, function arguments and parameters are essential concepts for passing data to functions.
+
+# Parameters:
+# Parameters are the variables listed in the function definition that act as placeholders for the values that will be passed to the function.
+# They define what kind of input the function expects.
+
+# Example:
+def greet(name, greeting):
+  """This function greets a person with a specified greeting."""
+  print(f"{greeting}, {name}!")
+
+
+# Arguments:
+# Arguments are the actual values that are passed to the function when it is called. 
+# They are used to provide the input data to the function.
+
+# Example:
+greet("Alice", "Hello")  # "Alice" and "Hello" are arguments passed to the 'greet' function.
+
+# In this example, 'name' and 'greeting' are the parameters in the function definition, 
+# while "Alice" and "Hello" are the arguments passed to the function when it is called. 
+# The arguments are assigned to the corresponding parameters during the function call.
+
+# Types of Arguments:
+
+# Positional Arguments: These arguments are passed to the function based on their position in the function call.
+# Keyword Arguments: These arguments are passed using the parameter name followed by an equal sign and the value.
+
+# Example:
+def describe_person(name, age, city):
+  print(f"Name: {name}, Age: {age}, City: {city}")
+
+# Positional arguments
+describe_person("Raj", 25, "Delhi")
+
+# Keyword arguments
+describe_person(name="Chandan", city="Mumbai", age=28) 
+
+# Default Arguments: You can specify default values for parameters in the function definition.
+# If an argument is not provided during the function call, the default value will be used.
+
+# Example:
+def greet_with_default(name, greeting="Hi"):
+  print(f"{greeting}, {name}!")
+
+greet_with_default("Dhawan")  # Output: Hi, Dhawan!
+greet_with_default("Ayesha", greeting="Good morning") # Output: Good morning, Ayesha!
+
+
+# Arbitrary Arguments (*args and **kwargs):
+# *args: Allows you to pass a variable number of non-keyword arguments to a function.
+# **kwargs: Allows you to pass a variable number of keyword arguments to a function.
+
+# Example:
+def my_function(*args, **kwargs):
+  print("args:", args)  # args will be a tuple of the positional arguments
+  print("kwargs:", kwargs) # kwargs will be a dictionary of the keyword arguments
+
+
+my_function(1, 2, 3, name="Alice", city=" Delhi")
+
+
+#3. What are the different ways to define and call a function in Python?
+
+# 1. Defining a function using the `def` keyword:
+
+def my_function(param1, param2):
+  """This is a docstring explaining the function."""
+  # Function body - code to be executed when the function is called
+  result = param1 + param2
+  return result
+
+
+# 2. Calling a function using its name and providing arguments:
+
+result = my_function(10, 5)  # Calling the function with arguments 10 and 5
+print(result)  # Output: 15
+
+
+# 3. Defining a function with default arguments:
+
+def greet(name, greeting="Hello"):
+  print(f"{greeting}, {name}!")
+
+
+# 4. Calling a function with positional and keyword arguments:
+
+greet("Dhawan")  # Using default greeting
+greet(name="Raj", greeting="Hi")  # Explicitly providing both arguments
+
+
+# 5. Defining a function with variable number of arguments using *args and **kwargs:
+
+def my_function_with_args(*args, **kwargs):
+  print("Positional arguments:", args)
+  print("Keyword arguments:", kwargs)
+
+
+# 6. Calling a function with multiple arguments using *args and **kwargs:
+
+my_function_with_args(1, 2, 3, name="Dhawan", age=30)
+
+# Using lambda functions (anonymous functions):
+
+square = lambda x: x * x  # Defining a lambda function to square a number
+print(square(5))  # Output: 25
+
+
+#4. What is the purpose of the `return` statement in a Python function?
+
+# The `return` statement in a Python function serves the purpose of:
+
+# 1. Specifying the output of the function:
+#    - It allows the function to send a value or a set of values back to the part of the program that called it.
+#    - This value can then be used in further calculations or assignments.
+
+# Example:
+def calculate_area(length, width):
+  """Calculates the area of a rectangle."""
+  area = length * width
+  return area
+
+rectangle_area = calculate_area(5, 3)
+print(f"The area of the rectangle is: {rectangle_area}")
+
+
+# 2. Terminating the function's execution:
+#    - When the `return` statement is encountered, the function's execution immediately stops.
+#    - Any code written after the `return` statement within the function will not be executed.
+
+# Example:
+def divide_numbers(a, b):
+  """Divides two numbers and returns the result."""
+  if b == 0:
+    return "Cannot divide by zero!"
+  else:
+    return a / b
+
+result = divide_numbers(10, 2)
+print(result)  # Output: 5.0
+
+result = divide_numbers(10, 0)
+print(result)  # Output: Cannot divide by zero!
+
+
+# 3. Returning multiple values:
+#    - You can use `return` to return multiple values as a tuple.
+
+# Example:
+def get_name_and_age():
+  """Returns a name and age."""
+  name = "Alice"
+  age = 30
+  return name, age
+
+returned_name, returned_age = get_name_and_age()
+print(f"Name: {returned_name}, Age: {returned_age}")
+
+
+# 4. Returning None (implicitly):
+#    - If a function doesn't have a `return` statement, it automatically returns `None` by default.
+
+# Example:
+def my_function():
+  """This function doesn't have a return statement."""
+  print("Hello from my_function!")
+
+result = my_function()
+print(result)  # Output: None
+
+# In summary, the `return` statement plays a crucial role in defining how a function interacts with the rest of your code.
+# It determines what value(s) the function produces and allows you to control the flow of execution within your functions.
+
+#5. What are iterators in Python and how do they differ from iterables?
+
+# In Python, iterators and iterables are fundamental concepts for working with sequences of data.
+
+# Iterable:
+# An iterable is an object that can be looped over using a `for` loop. 
+# It means it implements the `__iter__` method, which returns an iterator.
+# Examples of iterables include lists, tuples, strings, dictionaries, and sets.
+
+# Iterator:
+# An iterator is an object that represents a stream of data.
+# It implements the `__next__` method, which returns the next element in the stream. 
+# When there are no more elements, it raises the `StopIteration` exception.
+# Iterators are used to traverse the elements of an iterable one by one.
+
+# Relationship between Iterables and Iterators:
+# An iterable can produce an iterator using the `iter()` function. 
+# This iterator can then be used to iterate over the elements of the iterable.
+
+# Example:
+
+my_list = [1, 2, 3]  # my_list is an iterable
+my_iterator = iter(my_list)  # Getting an iterator from my_list
+
+print(next(my_iterator))  # Output: 1
+print(next(my_iterator))  # Output: 2
+print(next(my_iterator))  # Output: 3
+
+# If we call next() again, it will raise StopIteration because there are no more elements
+
+# Key Differences:
+# 1. `__iter__` vs. `__next__`: Iterables implement the `__iter__` method, while iterators implement the `__next__` method.
+# 2. Statefulness: Iterators maintain an internal state (current position), which is updated with each call to `next()`. Iterables do not keep track of the current position.
+# 3. Lazy Evaluation: Iterators perform lazy evaluation, meaning that they compute the next element only when it is needed. This can be useful for working with large datasets or infinite sequences.
+
+# Example of using an iterator in a for loop:
+my_list = [1, 2, 3]
+for element in my_list:
+  print(element)
+
+# Behind the scenes, the for loop automatically calls `iter()` to obtain an iterator from my_list.
+# Then, it repeatedly calls `next()` on the iterator until the `StopIteration` exception is raised.
+
+
+# Why are Iterators Useful?
+# - Memory Efficiency: Iterators are memory-efficient when dealing with large datasets because they don't load the entire dataset into memory at once.
+# - Lazy Evaluation: It avoids unnecessary computations, improving performance.
+# - Infinite Sequences: Iterators can be used for infinite sequences (e.g., generating numbers continuously), which cannot be stored in memory.
+
+
+# In summary, iterables are objects that can be looped over, while iterators are objects that provide a way to traverse the elements of an iterable one by one.
+# The `iter()` function helps us create iterators from iterables.
+
+#6. Explain the concept of generators in Python and how they are defined
+
+
+# Generators in Python are a special type of function that allows you to iterate over a sequence of values one at a time, without storing the entire sequence in memory.
+# They are particularly useful for working with large datasets or infinite sequences where you only need to access the elements one by one as you iterate.
+
+
+# Defining a Generator:
+# A generator function is defined like a normal function, but instead of using the `return` statement to return a value, it uses the `yield` statement.
+# The `yield` statement pauses the function's execution and returns a value to the caller.
+# When the generator is called again, it resumes execution from where it left off.
+
+
+# Example of a Generator:
+def my_generator():
+  """A simple generator function."""
+  yield 1
+  yield 2
+  yield 3
+
+
+# Using the Generator:
+gen = my_generator()  # Creating a generator object
+
+print(next(gen))  # Output: 1
+print(next(gen))  # Output: 2
+print(next(gen))  # Output: 3
+
+# If you try to call `next(gen)` again, it will raise a `StopIteration` exception because the generator has finished producing values.
+
+
+# Generator Expressions:
+# Similar to list comprehensions, you can create generators using generator expressions.
+# These are a concise way to define simple generators.
+
+# Example of a Generator Expression:
+my_numbers = (x for x in range(5))  # Creating a generator expression
+
+for number in my_numbers:
+  print(number)  # Output: 0, 1, 2, 3, 4
+
+
+# Advantages of Using Generators:
+# 1. Memory Efficiency: Generators produce values on demand, so they don't need to store the entire sequence in memory. This is especially beneficial for large datasets.
+# 2. Lazy Evaluation: Values are only computed when they are needed, which can improve performance, especially when processing complex computations.
+# 3. Infinite Sequences: Generators can be used to produce infinite sequences (e.g., generating an unending stream of numbers) because they don't require storing all values in memory.
+
+
+# Example of an Infinite Generator:
+def infinite_counter():
+  """Generates an infinite sequence of numbers."""
+  i = 0
+  while True:
+    yield i
+    i += 1
+
+
+# counter = infinite_counter()
+
+# for _ in range(10):
+#   print(next(counter))  # Output: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+# In summary, generators are a powerful feature in Python that enables you to create efficient and flexible ways to generate sequences of values.
+# They are particularly useful for dealing with large datasets, infinite sequences, and scenarios where lazy evaluation and memory efficiency are important.
+
+#7. What are the advantages of using generators over regular functions?
+
+# Advantages of Using Generators Over Regular Functions:
+
+# 1. Memory Efficiency:
+#    - Generators produce values on demand (lazily), so they don't need to store the entire sequence in memory.
+#    - This is especially beneficial when dealing with large datasets or infinite sequences.
+#    - Regular functions would need to store the entire sequence in memory, potentially leading to memory errors or performance issues.
+
+# Example:
+# def generate_numbers(n):
+#   """Generates a list of numbers."""
+#   return [i for i in range(n)]  # Creates a complete list
+
+# def generate_numbers_generator(n):
+#   """Generates a sequence of numbers using a generator."""
+#   for i in range(n):
+#     yield i  # Yields one number at a time
+
+# # For large n, generate_numbers() might consume a lot of memory, while generate_numbers_generator() will be more efficient.
+
+
+# 2. Lazy Evaluation:
+#    - Generators only compute the next value when it is requested.
+#    - This can improve performance, especially when dealing with complex computations.
+#    - Regular functions would compute all values at once, even if they are not needed.
+
+# Example:
+# def calculate_expensive_values(n):
+#   """Calculates a sequence of expensive values."""
+#   return [expensive_calculation(i) for i in range(n)]
+
+# def calculate_expensive_values_generator(n):
+#   """Calculates a sequence of expensive values using a generator."""
+#   for i in range(n):
+#     yield expensive_calculation(i)
+
+# # Using a generator can ensure that expensive_calculation() is only called when the next value is needed.
+
+
+# 3. Infinite Sequences:
+#    - Generators can be used to produce infinite sequences (e.g., generating an unending stream of numbers) because they don't require storing all values in memory.
+#    - Regular functions cannot represent infinite sequences because they would need to store all values in memory.
+
+# Example:
+# def infinite_counter():
+#   """Generates an infinite sequence of numbers."""
+#   i = 0
+#   while True:
+#     yield i
+#     i += 1
+
+# # You can iterate over the generator using a for loop or the next() function.
+
+
+# 4. Simplified Code:
+#    - Generators can make code more concise and readable, especially when you need to create sequences or iterables.
+#    - You can avoid the complexity of creating temporary lists or iterators.
+
+
+# In summary, generators offer advantages in terms of memory efficiency, lazy evaluation, support for infinite sequences, and often contribute to clearer and more readable code compared to regular functions, particularly when dealing with sequences of data.
+
+#8. What is a lambda function in Python and when is it typically used?
+
+# Lambda Functions in Python
+
+# A lambda function is a small, anonymous function defined using the `lambda` keyword.
+# It can take any number of arguments but can only have one expression.
+
+# Syntax:
+# lambda arguments: expression
+
+# Example:
+square = lambda x: x * x  # Defines a lambda function to square a number
+
+print(square(7))  # Output: 49
+
+# How Lambda Functions Differ from Regular Functions:
+
+# 1. Anonymous: They don't have a name like regular functions defined using `def`.
+# 2. Concise: They are designed for short, simple operations.
+# 3. Single Expression: They can only contain a single expression, not multiple statements.
+
+
+# When are Lambda Functions Typically Used?
+
+# 1. Short, Simple Operations: When you need a small function for a specific task without the overhead of defining a full function.
+# 2. Higher-Order Functions: As arguments to higher-order functions like `map`, `filter`, and `reduce`.
+# 3. Event Handling: As callbacks for events, where you need a quick function to handle specific events.
+
+
+# Example: Using Lambda with `map`
+numbers = [1, 2, 3, 4, 5, 6, 7]
+squared_numbers = list(map(lambda x: x * x, numbers))  # Applies the lambda function to each element in the list
+print(squared_numbers)  # Output: [1, 4, 9, 16, 25, 36, 49]
+
+
+# Example: Using Lambda with `filter`
+numbers = [1, 2, 3, 4, 5, 6]
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))  # Filters the list based on the lambda function's condition
+print(even_numbers)  # Output: [2, 4, 6]
+
+
+# Example: Using Lambda with `reduce` (Requires importing `functools`)
+from functools import reduce
+numbers = [1, 2, 3, 4, 5]
+product = reduce(lambda x, y: x * y, numbers)  # Accumulates the product of the elements in the list using the lambda function
+print(product)  # Output: 120
+
+
+# In Summary:
+
+# Lambda functions are a powerful tool for writing concise and anonymous functions.
+# They are often used in situations where you need a short, simple function,
+# particularly when working with higher-order functions or event handling.
+
+#9. Explain the purpose and usage of the `map()` function in Python.
+
+# The `map()` function in Python is a built-in function that applies a given function to each item in an iterable (like a list, tuple, or string) and returns an iterator that yields the results.
+
+# Purpose:
+# The primary purpose of `map()` is to transform data in a collection by applying a specific function to each element.
+
+# Usage:
+# map(function, iterable, ...)
+
+# `function`: The function to be applied to each element.
+# `iterable`: The iterable (list, tuple, etc.) containing the elements.
+# `...`: You can provide multiple iterables if the function takes multiple arguments.
+
+
+# Example: Squaring numbers in a list
+
+numbers = [1, 2, 3, 4, 5]
+
+# Define a function to square a number
+def square(x):
+  return x * x
+
+# Apply the `square` function to each element in the `numbers` list using `map`
+squared_numbers = map(square, numbers)
+
+# Convert the result (an iterator) to a list to see the values
+squared_numbers_list = list(squared_numbers)
+print(squared_numbers_list)  # Output: [1, 4, 9, 16, 25]
+
+
+# Example: Converting strings to uppercase
+
+names = ["Raj", "Don", "Chandan"]
+
+# Use the `str.upper` method (a function) to convert each name to uppercase
+uppercase_names = map(str.upper, names)
+
+# Convert the iterator to a list
+uppercase_names_list = list(uppercase_names)
+print(uppercase_names_list)  # Output: ['Raj', 'Don', 'Chandan']
+
+
+# Example: Applying a function to multiple iterables
+
+numbers1 = [1, 2, 3]
+numbers2 = [4, 5, 6]
+
+# Define a function that adds two numbers
+def add(x, y):
+  return x + y
+
+# Apply the `add` function to corresponding elements of `numbers1` and `numbers2`
+sums = map(add, numbers1, numbers2)
+
+# Convert the iterator to a list
+sums_list = list(sums)
+print(sums_list)  # Output: [5, 7, 9]
+
+
+# Note: `map()` returns an iterator, so you typically need to convert it to a list, tuple, or another collection type to view the results explicitly.
+
+# Benefits:
+
+# 1. Concise: It provides a concise way to apply a function to every element in an iterable.
+# 2. Functional Programming: `map()` promotes a functional programming style, making your code more modular and reusable.
+# 3. Readability: It can make your code easier to read and understand, especially when you're dealing with list transformations.
+
+# In summary, the `map()` function is a useful tool for transforming data in collections efficiently by applying a function to each element in the collection.
+
+#10. What is the difference between `map()`, `reduce()`, and `filter()` functions in Python?
+
+from functools import reduce
+
+# map(), reduce(), and filter() are built-in functions in Python used for functional programming.
+# They allow you to apply functions to iterables in a concise and efficient way.
+
+# 1. map():
+# - Applies a function to each element of an iterable and returns an iterator with the results.
+# - It transforms data by applying a specific operation to each element.
+
+# Example:
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = list(map(lambda x: x * x, numbers))
+print("map() example:", squared_numbers)  # Output: [1, 4, 9, 16, 25]
+
+# 2. filter():
+# - Applies a function to each element of an iterable and returns an iterator with elements that satisfy a condition (the function returns True).
+# - It selectively filters elements from the iterable.
+
+# Example:
+numbers = [1, 2, 3, 4, 5]
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print("filter() example:", even_numbers)  # Output: [2, 4]
+
+# 3. reduce():
+# - Applies a function cumulatively to the elements of an iterable, from left to right, to reduce it to a single value.
+# - It performs a rolling computation on the elements of an iterable.
+
+# Example:
+numbers = [1, 2, 3, 4, 5]
+product = reduce(lambda x, y: x * y, numbers)
+print("reduce() example:", product)  # Output: 120
+
+
+# Key Differences:
+
+# | Function | Purpose                      | Returns                 |
+# |----------|-------------------------------|-------------------------|
+# | map()    | Apply a function to each element | Iterator of results     |
+# | filter() | Filter elements based on a condition | Iterator of matching elements |
+# | reduce() | Combine elements to a single value | Single value            |
+
+
+# In summary:
+# - `map()` transforms all elements of an iterable by applying a function.
+# - `filter()` selects elements from an iterable based on a condition.
+# - `reduce()` combines elements of an iterable into a single result.
+
+# These functions are powerful tools for functional programming in Python.
+
+#11. Using pen & Paper write the internal mechanism for sum operation using  reduce function on this given 
+list:[47,11,42,13]; 
+
+
+from google.colab import files  
+
+uploaded = files.upload()
+
+for fn in uploaded.keys():
+  print('User uploaded file "{name}" with length {length} bytes'.format(
+      name=fn, length=len(uploaded[fn])))
+image.jpg
+image.jpg(image/jpeg) - 364383 bytes, last modified: 25/9/2024 - 100% done
+Saving image.jpg to image (1).jpg
+User uploaded file "image (1).jpg" with length 364383 bytes
+
+     
+
+
+
+
