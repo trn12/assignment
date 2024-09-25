@@ -1,0 +1,322 @@
+#ASSIGNMENT 2
+
+#  Q 1. Discuss string slicing and provide examples .
+
+  # ANS : string slicing allows to access a  specific part of a string by specifying a range of indices.
+
+      #  The syntax of string slicing is as follows:
+      #  string[start:end:step]
+
+       # start : The starting index of the slice.
+       # end : The ending index of the slice (exclusive).
+       # step : The step size of the slice.
+
+       # Examples: text = "Hello, World!"
+                #  print(text[0:5])  # Output: "Hello"
+                #  print(text[7:])   # Output: "World!"
+                 # print(text[:5])   # Output: "Hello"
+
+
+       # other type of slicing are
+
+        #1. slicing with a step
+
+       #   text = "abcdefg"
+       #   print (text[::2]) # output : "aceg"
+
+
+         #2. negative indexing
+
+        #  text = "abcdefg"
+        #  print((text[::-1])) # output : "gfedcba"
+
+     
+
+# Q 2. Explain the key features of lists in python.
+
+ #ANS : Features of lists in python :
+
+     # 1. Lists are ordered.
+     # 2. Lists can contain any arbitrary objects.
+      #3. List elements can be accessed by index.
+     # 4. Lists can be nested to arbitrary depth.
+     # 5. Lists are mutable.
+     # 6. Lists are dynamic.
+     
+
+# Q 3. Describe how to access , modify ,and delete elements in a list with examples .
+
+ #ANS : in python we can access , modify , and delete elements
+
+  #     Examples are as follows :
+
+    #   1. Accessing elements :
+
+    #    a. using index
+
+     #   we can access elements in a list using their index.
+     #   index starts from 0.
+     #   list = [1,2,3,4,5]
+     #   print(list[2])
+     #   output : 3
+
+     #   b. using slicing
+
+     #   we can access a range of elements in a list using slicing.
+     #   list = [1,2,3,4,5]
+     #   print(list[1:4])
+      #  output : [2,3,4]
+
+     #   2. Modifying elements :
+
+      #   a. using index
+
+#       we can modify elements in a list using their index.
+      #    list = [1,2,3,4,5]
+       #   list[2] = 10
+       #   print(list)
+       #   output : [1,2,10,4,5]
+
+      #    b. using slicing
+
+      #    we can modify a range of elements in a list using slicing.
+
+       #   list = [1,2,3,4,5]
+       #   list[1:4] = [10,20,30]
+       #   print(list)
+       #   output : [1,10,20,30,5]
+
+      #  3. Deleting elements
+
+      #  list = [1,2,3,4,5]
+      #  del list[2]
+      #  print(list)
+      #  output : [1,2,4,5]
+
+
+
+
+
+     
+
+# Q.4 compare and contrast tuples and lists with examples .
+
+#ANS : Tuples and lists are both used to store collections of data in Python. However, there are some key differences between the two data structures:
+
+      # 1. Mutability
+      # Tuples are immutable, which means that once a tuple is created, its elements cannot be modified.
+      # Lists, on the other hand, are mutable
+
+    #  2. Syntax
+      # Tuples are defined using parentheses () and elements are separated by commas.
+      # Lists are defined using square brackets [] and elements are separated by commas.
+
+     # 3. Methods
+      # Tuples have fewer methods than lists because they are immutable.
+      # Lists have more methods than tuples because they are mutable.
+      # Some common methods for tuples include count() and index().
+      # Some common methods for lists include append(), extend(), insert(), remove(), pop(), and sort().
+      # Here are some examples of each data structure:
+
+      # Tuples
+   #   my_tuple = (1, 2, 3, 4, 5)
+    #  print(my_tuple[0])  # Output: 1
+    #  print(my_tuple[1:4])  # Output: (2, 3, 4)
+      # my_tuple[0] = 10  # This will raise a TypeError because tuples are immutable
+      # Lists
+    #  my_list = [1, 2, 3, 4, 5]
+    #  print(my_list[0])  # Output: 1
+    #  print(my_list[1])  # Output: 2
+    #  my_list[0] = 10
+      #print(my_list)  # Output: [10, 2, 3, 4, 5]
+    #  my_list.append(6)
+    #  print(my_list)  # Output: [10, 2, 3, 4, 5, 6]
+    #  my_list.remove(2)
+    #  print(my_list)  # Output: [10, 3, 4, 5, 6]
+
+    #  4. Usage
+
+     #   list : cannot be used as keys in dictionaries because they are mutable.
+     #   tuple : can be used as keys in dictionaries because they are immutable.
+     #   list : can be used as values in dictionaries because they are mutable.
+     #   tuple : cannot be used as values in dictionaries because they are immutable.
+
+     # 5. Performance
+
+     #   Tuples are generally faster than lists because they are immutable.
+     #   Lists are generally slower than tuples because they are mutable.
+     #   Tuples are more memory efficient than lists because they are immutable.
+     #   Lists are more memory efficient than tuples because they are mutable.
+
+
+
+
+
+     
+
+#Q.5 Describe the key features of sets and provide examples of their uses.
+
+#ANS :  sets in ptyhon are a collection of unique elements.
+
+  #    They are defined using curly braces {} or the set() function.
+
+   #   Sets are unordered, meaning that the elements are not stored in any particular order.
+
+   #   Sets are mutable, meaning that they can be modified after they are created.
+
+   #   Sets are unindexed, meaning that they cannot be accessed using an index.
+
+   #   Sets are useful for storing and performing operations on collections of unique elements.
+
+    #  examples of set uses are as follows :
+
+   #   1. Removing duplicates from a list :
+
+    #    my_list = [1, 2, 3, 4, 5, 2, 3, 4]
+    #    my_set = set(my_list)
+    #    print(my_set)  # Output: {1, 2, 3, 4, 5}
+
+    #  2. Tracking unique items
+
+    #   text = " amit ram mohan amit ram "
+    #   unique_words = set(text.split())
+    #   print(unique_words)
+    #   output : {'ram', 'amit', 'mohan'}
+
+   #    3. Performing set operations
+
+     #   sets are useful for performing set operations such as union, intersection, and difference.
+
+    #    example is as follows :
+
+     #   set1 = {1, 2, 3, 4}
+      #  set2 = {3, 4, 5, 6}
+     #   union_set = set1.union(set2)
+     #   print(union_set)
+     #   output : {1,2,3,4,5,6}
+
+
+
+
+
+     
+
+#Q.6 Discuss the use cases of tuples and sets in python programming.
+
+ # ANS : Tuples and sets are both used to store collections of data in Python, but they have some key differences.
+
+  #     Use cases of tuples in python :
+
+       # 1. Representing coordinates :
+
+  #       point = (10, 20)
+  #       print(point[0])  # Output: 10
+   #      print(point[1])  # Output: 20
+
+       # 2. Returning multiple values from a function :
+
+
+    #     def get_person_info():
+    #         name = "John Doe"
+     #        age = 30
+     #        return (name, age)
+     #    person_info = get
+
+    #     print(person_info[0])  # Output: "John Doe"
+    #     print(person_
+
+    #    3. Representing a single value :
+
+     #          single_value = (42,)
+     #          print(single_value[0])  # Output: 42
+
+
+       #    Use cases of sets in python :
+
+            # 1. Removing duplicates from a list :
+       #      my_list = [1, 2, 3, 4, 5, 2, 3, 4]
+       #      my_set = set(my_list)
+       #      print(my_set)
+
+       #       output : {1,2,3,4,5}
+
+               # 2. Tracking unique items :
+        #       text = "This is a sample text. This text contains some repeated words."
+        #       unique_words = set(text.split())
+        #       print(unique_words)
+        #       output : {'This', 'is', 'a', 'sample', 'text.', 'contains', 'some', 'repeated', 'words.'}
+
+               # 3. Performing set operations :
+         #      set1 = {1, 2, 3, 4}
+          #     set2 = {3, 4, 5, 6}
+         #      union_set = set1.union(set2)
+         #      print(union_set)
+          #     output : {1,2,3,4,5,6}
+
+
+     
+
+# Q.7 Describe how to add , modify , and delete items in a dictionary with examples.
+
+ # ANS : In python we can add , modify , and delete items in a dictionary.
+
+
+        1. Adding items :
+
+         #  my_dict = {"name": "John", "age": 30}
+          # my_dict["city"] = "
+
+          # print(my_dict)  # Output: {"name": "John", "age": 30, "city": "
+
+
+          # 2. Modifying items :
+
+          #  my_dict = {"name": "John", "age": 30}
+          # my_dict["age"] = 35
+          # print(my
+          #  print(my_dict)  # Output: {"name": "John", "age": 35}
+
+
+
+       # 3 . Deleting items :
+
+          # my_dict = {"name": "John", "age": 30}
+          # del my_dict["age"]
+          # print(my_dict)  # Output: {"name": "John"}
+
+
+
+     
+
+# Q.8 Discuss the importance of dictionary keys being immutable and provide examples .
+
+ ANS : 1. In python dictionary keys is being immutable to  maintain the integrity and uniqueness of the data.
+
+      examples are as follows
+
+      immutable keys : my dict = {(1, 2): "value1", (3, 4): "value2"}
+      print(my_dict[(1, 2)])  # Output: "value1"
+
+      mutable keys :
+      my_dict = {[1, 2]: "value1", [3, 4]: "value2"}  # This will raise a TypeError because lists are mutable
+
+      immutable keys :
+
+      my_dict = {"name": "John", "age": 30}
+      print(my_dict["name"])  # Output: "John"
+      print(my_dict["age"])  # Output: 30
+      my_dict["age"] = 35
+      print(my_dict)  # Output: {"name": "John", "age": 35}
+      del my_dict["age"]
+      print(my_dict)  # Output: {"name": "John"}
+      my_dict["city"] = "New York"
+      print(my_dict)  # Output: {"name": "John", "city": "New York"}
+
+
+      my_dict = {(1, 2): "value1", (3, 4): "value2"}
+      print(my_dict[(1, 2)])  # Output: "value1"
+
+
+   2. Efficiency and performance
+
+     The immutability of keys  ensure that once a key is added to a dictionary its hash value remains the same for fast and efficient lookup.
